@@ -3,11 +3,9 @@ import PyPDF2
 import google.generativeai as genai
 
 # =========================
-# Load Gemini API Key
+# Gemini API Key from Streamlit Secrets
 # =========================
-with open("apikey.txt", "r") as file:
-    api_key = file.read().strip()
-
+api_key = st.secrets["GEMINI_API_KEY"]
 genai.configure(api_key=api_key)
 
 # =========================
